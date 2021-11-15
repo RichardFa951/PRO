@@ -1,0 +1,59 @@
+//1
+package com.company;
+
+import java.sql.SQLOutput;
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+    double zaciatok;
+    double ciel;
+    double dsd;
+    int pocetDni = 0;
+
+        Scanner sc1=new Scanner(System.in);
+        System.out.print("zadajte km pre 1. den: ");
+        zaciatok = sc1.nextDouble();
+
+        Scanner sc2=new Scanner(System.in);
+        System.out.print("zadajte cielove km: ");
+        ciel = sc2.nextDouble();
+
+        while(ciel>zaciatok){
+            zaciatok = zaciatok +(zaciatok/10);
+            pocetDni++;
+        }
+        System.out.println("Na " +pocetDni+" den prebehne "+zaciatok +" km");
+
+    }
+}
+
+//2
+package com.company;
+
+import java.sql.SQLOutput;
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        int a =1;
+        int b= 1;
+        int c;
+        int d = 2;
+        System.out.print("Zadaj cislo: ");
+        Scanner sc2 = new Scanner(System.in);
+        int cislo = sc2.nextInt();
+
+ while(d !=cislo){
+     d ++;
+     c = a+b;
+     System.out.print(c+" ");
+     a=b;
+     b=c;
+
+    }
+}
+}
