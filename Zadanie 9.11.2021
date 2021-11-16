@@ -89,7 +89,6 @@ public class Main {
                 int g = 2;
 
                 int r = rand.nextInt(g);
-            System.out.println(r);
                 if (r == farba){
                     peniaze = peniaze +(2*vyskaStavky);
 
