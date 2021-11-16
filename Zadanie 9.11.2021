@@ -57,3 +57,56 @@ public class Main {
     }
 }
 }
+
+//3 ruleta
+package com.company;
+
+import java.sql.SQLOutput;
+import java.util.Scanner;
+import java.util.Random;
+public class Main {
+    public static void main(String[] args) {
+        int peniaze = 100;
+        int vyskaStavky;
+        int farba;
+        boolean ruleta = true;
+        while (ruleta){
+                System.out.println("Máš:"+ peniaze);
+                System.out.println("Zadajte vyšku stavky");
+                Scanner mojScanner = new Scanner(System.in);
+                vyskaStavky = mojScanner.nextInt();
+            if(peniaze>=vyskaStavky) {
+                peniaze = peniaze - vyskaStavky;
+            }
+            else{
+                System.out.println("Nemas dostatok penazi!");
+                System.exit(0);
+            }
+                System.out.println("Zadajte farbu (0-cervena, 1-cierna)");
+                farba= mojScanner.nextInt();
+
+                Random rand = new Random();
+                int g = 2;
+
+                int r = rand.nextInt(g);
+            System.out.println(r);
+                if (r == farba){
+                    peniaze = peniaze +(2*vyskaStavky);
+
+                }
+
+                System.out.println("Máš:"+ peniaze);
+
+            if(peniaze==0){
+                System.out.println("Prehral si všetky peniaze!");
+                System.exit(0);
+            }
+            mojScanner.nextLine();
+            System.out.println("Chcete skoncit?");
+            String koniec = mojScanner.nextLine();
+            if(koniec.equals("ano")){
+                ruleta = false;
+            }
+        }
+    }
+}
