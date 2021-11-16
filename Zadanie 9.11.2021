@@ -60,7 +60,6 @@ public class Main {
 
 //3 ruleta
 package com.company;
-
 import java.sql.SQLOutput;
 import java.util.Scanner;
 import java.util.Random;
@@ -89,6 +88,10 @@ public class Main {
                 int g = 2;
 
                 int r = rand.nextInt(g);
+                if(r==0){
+                    System.out.println("Padla cervena");
+                }else System.out.println("Padla cierna");
+
                 if (r == farba){
                     peniaze = peniaze +(2*vyskaStavky);
 
