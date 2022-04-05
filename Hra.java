@@ -94,7 +94,7 @@ public class Bojovnik {
     }
 }
 
-/Kocka
+//Kocka
 package com.company;
 import  java.util.Random;
 public class Kocka {
