@@ -1,0 +1,217 @@
+----------kalkulacka----------
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+
+int main() {
+    // Inicializácia generátora náhodných čísel
+    std::srand(std::time(nullptr));
+
+    // Náhodné generovanie čísel
+    int cislo1 = std::rand() % 100; // Náhodné číslo od 0 do 99
+    int cislo2 = std::rand() % 100; // Náhodné číslo od 0 do 99
+
+    // Výpočet a výpis sčítania
+    int sucet = cislo1 + cislo2;
+    std::cout << "Súčet: " << cislo1 << " + " << cislo2 << " = " << sucet << std::endl;
+
+    // Výpočet a výpis odčítania
+    int rozdiel = cislo1 - cislo2;
+    std::cout << "Rozdiel: " << cislo1 << " - " << cislo2 << " = " << rozdiel << std::endl;
+
+    // Výpočet a výpis násobenia
+    int sucin = cislo1 * cislo2;
+    std::cout << "Súčin: " << cislo1 << " * " << cislo2 << " = " << sucin << std::endl;
+
+    // Výpočet a výpis delenia (ak je deliteľ nenulový)
+    if (cislo2 != 0) {
+        double podiel = static_cast<double>(cislo1) / cislo2;
+        std::cout << "Podiel: " << cislo1 << " / " << cislo2 << " = " << podiel << std::endl;
+    } else {
+        std::cout << "Chyba: Delenie nulou!" << std::endl;
+    }
+
+    // Výpočet a výpis mocnenia
+    int mocnina = 1;
+    for (int i = 0; i < cislo2; ++i) {
+        mocnina *= cislo1;
+    }
+    std::cout << "Mocnina: " << cislo1 << "^" << cislo2 << " = " << mocnina << std::endl;
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+------Pole naplnenie namensie najvacsie-----------
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+
+int main() {
+    // Inicializácia generátora náhodných čísel
+    std::srand(std::time(nullptr));
+
+    const int velkostPola = 10;
+    int pole[velkostPola];
+
+    // Naplnenie poľa náhodnými číslami od 1 do 10
+    for (int i = 0; i < velkostPola; ++i) {
+        pole[i] = std::rand() % 10 + 1;
+    }
+
+    // Výpis prvkov poľa
+    std::cout << "Prvky pola: ";
+    for (int i = 0; i < velkostPola; ++i) {
+        std::cout << pole[i] << " ";
+    }
+    std::cout << std::endl;
+
+    // Výpočet najmenšieho a najväčšieho čísla v poli
+    int najmensie = pole[0];
+    int najvacsie = pole[0];
+    for (int i = 1; i < velkostPola; ++i) {
+        if (pole[i] < najmensie) {
+            najmensie = pole[i];
+        }
+        if (pole[i] > najvacsie) {
+            najvacsie = pole[i];
+        }
+    }
+
+    // Výpis najmenšieho a najväčšieho čísla
+    std::cout << "Najmenšie číslo: " << najmensie << std::endl;
+    std::cout << "Najväčšie číslo: " << najvacsie << std::endl;
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-----ZIAK------------
+using System;
+
+class Ziak
+{
+    private string meno;
+    private string priezvisko;
+    private string adresa;
+    private string cisloTelefonu;
+
+    // Bezparametrický konštruktor
+    public Ziak()
+    {
+    }
+
+    // Konštruktor s parametrami
+    public Ziak(string meno, string priezvisko, string adresa, string cisloTelefonu)
+    {
+        this.meno = meno;
+        this.priezvisko = priezvisko;
+        this.adresa = adresa;
+        this.cisloTelefonu = cisloTelefonu;
+    }
+
+    // Metódy na nastavenie hodnôt atribútov
+    public void SetMeno(string meno)
+    {
+        this.meno = meno;
+    }
+
+    public void SetPriezvisko(string priezvisko)
+    {
+        this.priezvisko = priezvisko;
+    }
+
+    public void SetAdresa(string adresa)
+    {
+        this.adresa = adresa;
+    }
+
+    public void SetCisloTelefonu(string cisloTelefonu)
+    {
+        this.cisloTelefonu = cisloTelefonu;
+    }
+
+    // Metódy na získanie hodnôt atribútov
+    public string GetMeno()
+    {
+        return meno;
+    }
+
+    public string GetPriezvisko()
+    {
+        return priezvisko;
+    }
+
+    public string GetAdresa()
+    {
+        return adresa;
+    }
+
+    public string GetCisloTelefonu()
+    {
+        return cisloTelefonu;
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        // Vytvorenie objektu triedy Ziak cez bezparametrický konštruktor
+        Ziak ziak1 = new Ziak();
+        
+        // Nastavenie hodnôt atribútov pomocou samostatných metód
+        ziak1.SetMeno("Peter");
+        ziak1.SetPriezvisko("Novak");
+        ziak1.SetAdresa("Hlavna ulica 10");
+        ziak1.SetCisloTelefonu("123456789");
+
+        // Vytvorenie objektu triedy Ziak cez konštruktor s parametrami
+        Ziak ziak2 = new Ziak("Marek", "Hrncirik", "Druha ulica 5", "987654321");
+
+        // Získanie hodnôt atribútov pomocou metód
+        Console.WriteLine("Ziak 1:");
+        Console.WriteLine("Meno: " + ziak1.GetMeno());
+        Console.WriteLine("Priezvisko: " + ziak1.GetPriezvisko());
+        Console.WriteLine("Adresa: " + ziak1.GetAdresa());
+        Console.WriteLine("Číslo telefónu: " + ziak1.GetCisloTelefonu());
+
+        Console.WriteLine();
+
+        Console.WriteLine("Ziak 2:");
+        Console.WriteLine("Meno: " + ziak2.GetMeno());
+        Console.WriteLine("Priezvisko: " + ziak2.GetPriezvisko());
+        Console.WriteLine("Adresa: " + ziak2.GetAdresa());
+        Console.WriteLine("Číslo telefónu: " + ziak2.GetCisloTelefonu());
+    }
+}
